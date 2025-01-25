@@ -1,0 +1,129 @@
+.about {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  overflow: hidden;
+  background-color: #fff; 
+}
+
+.about__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.about__illustration {
+  background-color: #FDD7C2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+
+}
+
+.about__illustration-text {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--plus-jakarta-sans, sans-serif);
+  color: #333;
+  background-color: #fff;
+  width: 500px; 
+  border-radius: 10px;  
+  padding: 30px;
+  position: absolute;
+  top: 8%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.about__illustration img {
+  width: 100%; 
+  object-fit: contain; 
+}
+
+.about__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--plus-jakarta-sans, sans-serif);
+  margin-left: 30px;
+}
+
+.about__text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.about__text p {
+  font-size: 1.2rem; 
+  margin-bottom: 20px;
+
+}
+
+.about__buttons {
+  display: flex;
+  gap: 15px;
+}
+.client__info{
+  display: flex;
+  padding-top: 20px;
+  margin-left: 25px;
+}
+
+.client__info, .verified {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.client__info img {
+  width: 25px; 
+  height: 25px; 
+  object-fit: cover;
+  border-radius: 50%;
+}
+.verified img,
+.location img{
+  width: 15px; 
+  height: 15px; 
+  object-fit: contain;
+
+}
+
+.location, .verified {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.client__info p, .verified p {
+  font-size: 0.9rem; 
+  color: #333;
+}
+
+
+
+.about__buttons .btn {
+  background-color: #855139;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.about__buttons .btn:hover {
+  background-color: #8E3807;
+}
