@@ -2,33 +2,29 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
-
-/* other css file imports */
-@import url("/css/header.css");
-@import url("/css/hero.css");
-@import url("/css/about.css");
-@import url("/css/feature.css");
-@import url("/css/howitwork.css");
-@import url("/css/footer.css");
-@import url("/css/contact.css");
 @import "aos/dist/aos.css";
 
 :root {
-  --playfair-display: "Playfair Display", serif;
-  --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
-
-  --primary-color: #201E43;
-  --secondary-color: #EEEEEE;
-
-  --black-200: #020202;
-  --black-300: #333333;
-  --black-400: #1f1e31;
-  --black-500: #555555;
-  --gray-100: #888888;
-
-  --color-white: #fff;
-  --color-creamson: #fef8ec;
+  --primary-color: #ffbf00; 
+  --secondary-color: #f7f6f2; 
+  --accent-color: #f9e6df; 
+  --highlight-color: #8e3807; 
+  --dark-text: #333333; 
+  --light-text: #f7f7f7; 
+  --gray-dark: #4a4a4a; 
+  --gray-light: #f0f0f0; 
+  --button-hover: #d89f00; 
+  
+  --fun-color-1: #8e44ad;
+  --fun-color-2: #3498db;
+  --fun-color-3: #2ecc71;
+  --fun-color-4: #e74c3c;
+  --fun-color-5: #f39c12; 
+  --fun-color-6: #9b59b6; 
+  --fun-color-7: #1abc9c; 
+  --fun-color-8: #f1c40f;
 }
+
 
 * {
   margin: 0;
@@ -115,23 +111,6 @@ footer ul li a {
   text-decoration: none;
 }
 
-#back-to-top {
-  display: none;
-  object-fit: cover;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #808859;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 10pc;
-  cursor: pointer;
-  z-index: 2;
-  animation: fadeIn 1s ease-out;
-}
-
-/* Keyframe animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -163,155 +142,39 @@ footer ul li a {
   }
 }
 
-/* Media Queries */
-@media screen and (max-width: 1024px) {
-  .about-us {
-    flex-direction: column;
-  }
-
-  .about-us__image {
-    flex-direction: row;
-  }
-
-  .about-us__image-sushi3 {
-    border-bottom: none;
-    border-right: 8px solid var(--color-creamson);
-  }
-
-  .about-us__button {
-    display: none;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-@media screen and (max-width: 750px) {
-  .about-us__image {
-    flex-direction: column;
-  }
-
-  .about-us__image-sushi3 {
-    border-bottom: 8px solid var(--color-creamson);
-    border-right: none;
-  }
-
-  .about-us__button {
-    display: block;
-    top: 47%;
-  }
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
-@media screen and (max-width: 550px) {
-  .about-us__image-sushi2 img,
-  .about-us__image-sushi3 img {
-    width: 50%;
-    height: 160px;
-    object-fit: contain;
-  }
-
-  .about-us__image div {
-    padding: 32px;
-  }
-
-  .about-us__button {
-    top: 44%;
-  }
-
-  .about-us__content {
-    padding: 32px;
-  }
+.parallax {
+  background-image: url('/asset/rb_1200.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
-@media screen and (max-width: 900px) {
-  .header__nav {
-    background: var(--primary-color);
-  }
-
-  .header__menu {
-    display: none;
-  }
-
-  .header__menu-mobile {
-    display: flex;
-  }
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px;
+  background-color: #ffbf00;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 550px) {
-  .header__logo {
-    padding-left: 0;
-  }
-}
-
-@media screen and (max-width: 1060px) {
-  .hero {
-    flex-direction: column;
-  }
-
-  .hero-image img {
-    width: 100%;
-    transform: matrix(1, 0.05, 0, 1.25, 0, 0) !important;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .hero-image h2 {
-    font-size: 70px;
-    line-height: 90px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .hero-image h2 {
-    font-size: 40px;
-    line-height: 60px;
-  }
-
-  .hero-content-info {
-    padding: 32px;
-  }
-
-  .hero-content-info h1 {
-    font-size: 60px;
-  }
-
-  .hero-content-info p {
-    margin: 32px 0;
-  }
-
-  .hero-content__buttons {
-    margin: 41px 0;
-  }
-
-  .hero-content__testimonial {
-    padding: 32px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .subscription {
-    padding: 64px 32px;
-  }
-
-  .subscription h2 {
-    font-size: 68px;
-    line-height: 100px;
-  }
-
-  .subscription__form {
-    flex-direction: column;
-    gap: 20px;
-    min-width: 100%;
-    border-radius: 20px;
-    padding: 0;
-    border: none;
-  }
-
-  .subscription__form input {
-    min-height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 10px 20px;
-    border-radius: 30px;
-  }
-
-  .subscription__form button {
-    min-width: 100%;
-  }
+#back-to-top:hover {
+  background-color: #d89f00;
 }
