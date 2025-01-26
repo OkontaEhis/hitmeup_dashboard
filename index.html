@@ -407,50 +407,7 @@
   
     const interval = setInterval(updateCountdown, 1000);
   </script>
-  <script>
-    // Your Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyADvrKfDP8ThVHRHRUqIY1AaWjv5-vyY3w",
-      authDomain: "hitmeupwebsite.firebaseapp.com",
-      projectId: "hitmeupwebsite",
-      storageBucket: "hitmeupwebsite.firebasestorage.app",
-      messagingSenderId: "994947010401",
-      appId: "1:994947010401:web:85c49a4cf6cbeca288bf20"
-    };
   
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore(app);
-  
-    // Function to handle form submission
-    document.getElementById('contact-form').addEventListener('submit', async (event) => {
-      event.preventDefault(); // Prevent the form from reloading the page
-  
-      const name = event.target.name.value;
-      const email = event.target.email.value;
-      const project = event.target.project.value;
-  
-      const services = Array.from(event.target.service)
-        .filter((checkbox) => checkbox.checked)
-        .map((checkbox) => checkbox.value);
-  
-      try {
-        await db.collection('contactFormSubmissions').add({
-          name,
-          email,
-          project,
-          services,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        });
-  
-        alert('Thank you! Your submission has been saved.');
-        event.target.reset(); // Reset the form after successful submission
-      } catch (error) {
-        console.error('Error saving form submission: ', error);
-        alert('Something went wrong. Please try again.');
-      }
-    });
-  </script>
   
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -459,4 +416,3 @@
 </body>
 
 </html>
-
