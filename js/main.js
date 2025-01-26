@@ -1,3 +1,50 @@
+/ Import Firebase Modules
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyADvrKfDP8ThVHRHRUqIY1AaWjv5-vyY3w",
+  authDomain: "hitmeupwebsite.firebaseapp.com",
+  projectId: "hitmeupwebsite",
+  storageBucket: "hitmeupwebsite.firebasestorage.app",
+  messagingSenderId: "994947010401",
+  appId: "1:994947010401:web:85c49a4cf6cbeca288bf20"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Form Submission Handler
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  e.preventDefault(); // Prevent page refresh
+
+  // Get form input values
+  const name = e.target.name.value;
+  const email = e.target.email.value;
+  const project = e.target.project.value;
+  const services = Array.from(
+    e.target.querySelectorAll("input[name='service']:checked")
+  ).map((checkbox) => checkbox.value);
+
+  try {
+    // Add document to Firestore
+    await addDoc(collection(db, "contactFormSubmissions"), {
+      name,
+      email,
+      project,
+      services,
+      timestamp: new Date(), // Optional timestamp
+    });
+
+    alert("Form submitted successfully!");
+    e.target.reset(); // Clear form after submission
+  } catch (error) {
+    console.error("Error adding document:", error);
+    alert("Error submitting the form. Please try again.");
+  }
+});
 // script.js
 function startCountdown(durationInDays, countdownElementId) {
   const countdownElement = document.getElementById(countdownElementId);
