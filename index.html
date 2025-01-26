@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,245 +9,407 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="/asset/letter-h-16.png">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav class="header__nav">
-      <div class="header__logo" data-aos="fade-right">
-        <h1>hitmeup</h1>
-      </div>
-      <ul class="header__menu" data-aos="fade-down">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#about-us">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <ul class="header__button">
-        <li><button class="cta" data-aos="fade-left">Get Started &#8594;</button></li>
-      </ul>
-      <ul class="header__menu-mobile" data-aos="fade-down">
-        <li><img src="/asset/menu.svg" alt="Menu Icon"></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero__content">
-      <div class="hero__text" data-aos="fade-up">
-        <h1>Find and Hire Talent in Seconds with hitmeup</h1>
-        <p>Your one-stop solution to connect with the best services</p>
-        <div class="hero__buttons">
-          <button class="btn" data-aos="zoom-in">Get Started</button>
-          <button class="btn btn--secondary" data-aos="zoom-in">Learn More</button>
-        </div>
-        <div class="hero__countdown" data-aos="fade-up">
-          <div id="countdown" class="countdown">
-            <p>Launching in:</p>
-            19d 23h 57m 31s
-          </div>
-        </div>
+<body>
+  <header class="bg-[#F7F6F2] py-4 sticky-nav">
+    <nav class="container mx-auto flex items-center justify-between px-6">
+      <div class="flex items-center" data-aos="fade-right">
+        <h1 class="text-2xl lg:text-3xl font-bold text-[#2D2A29]">hitmeup</h1> <!-- text-gray-800 replaced with #2D2A29 -->
       </div>
-      <div class="hero__illustration" data-aos="fade-left">
-        <img src="/asset/rb_1200.png" alt="Hero Illustration">
+  
+      <ul class="hidden md:flex items-center space-x-8" data-aos="fade-down">
+        <li><a href="#features" class="text-[#2D2A29] text-sm lg:text-base uppercase font-medium hover:text-primary transition">Features</a></li>
+        <li><a href="#how-it-works" class="text-[#2D2A29] text-sm lg:text-base uppercase font-medium hover:text-primary transition">How It Works</a></li>
+        <li><a href="#about-us" class="text-[#2D2A29] text-sm lg:text-base uppercase font-medium hover:text-primary transition">About</a></li> 
+        <li><a href="#contact" class="text-[#2D2A29] text-sm lg:text-base uppercase font-medium hover:text-primary transition">Contact</a></li> 
+      </ul>
+  
+      <div class="hidden md:flex" data-aos="fade-left">
+       <a href="#contact" <button class="px-6 py-3 rounded-full border-2 border-[#2D2A29] text-[#2D2A29] font-bold text-sm lg:text-base hover:bg-[#2D2A29] hover:text-white transition">
+          Get Started →
+        </button></a>
+      </div>
+  
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-toggle" class="text-[#2D2A29] focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex flex-col items-center space-y-4 mt-4 px-6">
+      <a href="#features" class="text-[#2D2A29] text-sm uppercase font-medium hover:text-primary transition">Features</a> <!-- text-gray-800 replaced with #2D2A29 -->
+      <a href="#how-it-works" class="text-[#2D2A29] text-sm uppercase font-medium hover:text-primary transition">How It Works</a> <!-- text-gray-800 replaced with #2D2A29 -->
+      <a href="#about-us" class="text-[#2D2A29] text-sm uppercase font-medium hover:text-primary transition">About</a> <!-- text-gray-800 replaced with #2D2A29 -->
+      <a href="#contact" class="text-[#2D2A29] text-sm uppercase font-medium hover:text-primary transition">Contact</a> <!-- text-gray-800 replaced with #2D2A29 -->
+      <button class="px-6 py-3 rounded-full border-2 border-primary text-[#2D2A29] font-bold text-sm hover:bg-primary hover:text-white transition">
+        Get Started →
+      </button>
+    </div>
+  </header>
+  
+
+  <section class="relative flex items-center justify-center min-h-screen bg-[var(--secondary-color)] parallax" id="hero">
+    <div class="container mx-auto px-6 lg:flex lg:items-center lg:justify-between">
+      <div class="text-center lg:text-left lg:max-w-lg" data-aos="fade-up">
+        <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight text-[var(--dark-text)] mb-4">
+          Find and Hire Talent in Seconds with <span class="text-[var(--fun-color-5)]">hitmeup</span>
+        </h1>
+        <p class="text-lg lg:text-2xl text-[var(--gray-dark)] mb-6">
+          Your one-stop solution to connect with the best services.
+        </p>
+        <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-4 space-y-4 lg:space-y-0">
+          <a href="#contact">
+            <button class="px-6 py-3 bg-[var(--fun-color-5)] text-white text-lg font-semibold rounded-lg shadow-md hover:bg-[var(--button-hover)] transition">
+              Get Started
+            </button>
+          </a>
+          <a href="#about-us">
+            <button class="px-6 py-3 border-2 border-[var(--primary-color)] text-[var(--primary-color)] text-lg font-semibold rounded-lg shadow-md hover:bg-[var(--primary-color)] hover:text-white transition">
+              Learn More
+            </button>
+          </a>
+        </div>
+        <div class="mt-8 text-xl font-medium text-[var(--dark-text)]" data-aos="fade-up">
+          <p class="mb-2">Launching in:</p>
+          <span id="countdown" class="text-2xl font-bold text-[var(--fun-color-5)]">19d 23h 57m 31s</span>
+        </div>
       </div>
     </div>
   </section>
+  
+  
+  
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" data-aos="fade-in">⬆</button>
+  <button id="back-to-top">⬆</button>
 
   <!-- Features Section -->
-  <section class="features__section" id="features">
-    <div class="feature__card" data-aos="fade-up">
-      <div class="feature__content">
-        <h2>Conversion</h2>
-        <p>Connect instantly with freelancers or clients.</p>
+  <section class="grid gap-8 px-6 sm:px-12 lg:px-16 max-w-screen-xl mx-auto mt-16 md:grid-cols-2 lg:grid-cols-3" id="features">
+    <!-- Conversion Feature -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
+      <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+          <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z" clip-rule="evenodd" />
+        </svg>
       </div>
-      <div class="feature__image">
-        <img src="/asset/rb_14185.png" alt="Conversion Illustration">
-      </div>
-    </div>
-    <div class="feature__card" data-aos="fade-up">
-      <div class="feature__content">
-        <h2>Community</h2>
-        <p>Connect instantly with like-minded freelancers or clients.</p>
-      </div>
-      <div class="feature__image">
-        <img src="/asset/206470839_10860477.png" alt="Community Illustration">
+      <div class="text-center p-8">
+        <h2 class="text-3xl font-bold text-var(--dark-text) mb-4">Conversion</h2>
+        <p class="text-var(--gray-dark)">Connect instantly with freelancers or clients.</p>
       </div>
     </div>
-    <div class="feature__card" data-aos="fade-up">
-      <div class="feature__content">
-        <h2>Secure Payments</h2>
-        <p>Fast and secure payment methods for all transactions.</p>
+  
+    <!-- Community Feature -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
+      <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+          <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+          <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+        </svg>
       </div>
-      <div class="feature__image">
-        <img src="logged-in-image.png" alt="Secure Payments Illustration">
-      </div>
-    </div>
-    <div class="feature__card" data-aos="fade-up">
-      <div class="feature__content">
-        <h2>Notifications</h2>
-        <p>Stay updated with real-time alerts.</p>
-      </div>
-      <div class="feature__image">
-        <img src="signup-image.png" alt="Notifications Illustration">
+      <div class="text-center p-8">
+        <h2 class="text-3xl font-bold text-var(--dark-text) mb-4">Community</h2>
+        <p class="text-var(--gray-dark)">Connect instantly with like-minded freelancers or clients.</p>
       </div>
     </div>
-    <div class="feature__card" data-aos="fade-up">
-      <div class="feature__content">
-        <h2>Security</h2>
-        <p>Fraud. No longer your problem.</p>
+  
+    <!-- Secure Payments Feature -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
+      <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+          <path d="M4.5 3.75a3 3 0 0 0-3 3v.75h21v-.75a3 3 0 0 0-3-3h-15Z" />
+          <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-7.5Zm-18 3.75a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clip-rule="evenodd" />
+        </svg>
       </div>
-      <div class="feature__image">
-        <img src="security-image.png" alt="Security Illustration">
+      <div class="text-center p-8">
+        <h2 class="text-3xl font-bold text-var(--dark-text) mb-4">Secure Payments</h2>
+        <p class="text-var(--gray-dark)">Fast and secure payment methods for all transactions.</p>
       </div>
     </div>
-    <div class="feature__card" data-aos="fade-up">
-      <div class="feature__content">
-        <h2>Watch Demo</h2>
-        <p>See hitmeup in action for yourself.</p>
+  
+    <!-- Notifications Feature -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
+      <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+          <path d="M5.85 3.5a.75.75 0 0 0-1.117-1 9.719 9.719 0 0 0-2.348 4.876.75.75 0 0 0 1.479.248A8.219 8.219 0 0 1 5.85 3.5ZM19.267 2.5a.75.75 0 1 0-1.118 1 8.22 8.22 0 0 1 1.987 4.124.75.75 0 0 0 1.48-.248A9.72 9.72 0 0 0 19.266 2.5Z" />
+          <path fill-rule="evenodd" d="M12 2.25A6.75 6.75 0 0 0 5.25 9v.75a8.217 8.217 0 0 1-2.119 5.52.75.75 0 0 0 .298 1.206c1.544.57 3.16.99 4.831 1.243a3.75 3.75 0 1 0 7.48 0 24.583 24.583 0 0 0 4.83-1.244.75.75 0 0 0 .298-1.205 8.217 8.217 0 0 1-2.118-5.52V9A6.75 6.75 0 0 0 12 2.25ZM9.75 18c0-.034 0-.067.002-.1a25.05 25.05 0 0 0 4.496 0l.002.1a2.25 2.25 0 1 1-4.5 0Z" clip-rule="evenodd" />
+        </svg>
       </div>
-      <div class="feature__image">
-        <img src="demo-image.png" alt="Demo Illustration">
+      <div class="text-center p-8">
+        <h2 class="text-3xl font-bold text-var(--dark-text) mb-4">Notifications</h2>
+        <p class="text-var(--gray-dark)">Stay updated with real-time alerts.</p>
+      </div>
+    </div>
+  
+    <!-- Security Feature -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
+      <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
+          <path d="M18 1.5c2.9 0 5.25 2.35 5.25 5.25v3.75a.75.75 0 0 1-1.5 0V6.75a3.75 3.75 0 1 0-7.5 0v3a3 3 0 0 1 3 3v6.75a3 3 0 0 1-3 3H3.75a3 3 0 0 1-3-3v-6.75a3 3 0 0 1 3-3h9v-3c0-2.9 2.35-5.25 5.25-5.25Z" />
+        </svg>
+      </div>
+      <div class="text-center p-8">
+        <h2 class="text-3xl font-bold text-var(--dark-text) mb-4">Security</h2>
+        <p class="text-var(--gray-dark)">Fraud. No longer your problem.</p>
       </div>
     </div>
   </section>
-
-  <!-- About Section -->
-  <section class="about" id="about-us">
-    <div class="about__content">
-      <div class="about__text" data-aos="fade-right">
-        <h1>Connecting talent with opportunity with a click of a button.</h1>
-        <p>Your one-stop solution to connect with the best services</p>
-        <div class="about__buttons">
-          <button class="btn" data-aos="zoom-in">Learn More</button>
+  
+  
+  
+  
+  
+  <section class="mt-10 relative w-full h-[85vh] flex items-center justify-center text-[var(--dark-text)] overflow-hidden bg-gradient-to-b from-white to-[var(--accent-color)]" id="about-us">
+    <div class="relative w-full h-full flex flex-wrap gap-8 px-8">
+      <div class="flex flex-col justify-center text-center md:text-left max-w-lg" data-aos="fade-right">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-[var(--dark-text)]">
+          Connecting talent with opportunity <br />with a click of a button.
+        </h1>
+        <p class="text-lg md:text-xl text-[var(--gray-dark)] mb-6">
+          Hitmeup is Nigeria's new favorite gig-to-gig platform. We connect people who need low to medium skilled errands done 
+          with taskers ready to earn. From deliveries and price checks to queuing and home assistance, finding help is fast and easy.
+          <br>
+          Hitmeup dey for you!
+        </p>
+        <div class="flex gap-4 justify-center md:justify-start">
+          <button class="bg-[var(--fun-color-5)] text-[var(--light-text)] px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
+            Learn More
+          </button>
         </div>
       </div>
-      <div class="about__illustration" data-aos="fade-left">
-        <div class="about__illustration-text">
-          <p class="about__text">Hey, I need someone to pick up a package from the post office and deliver it to my house. Are you available?</p>
-          <div class="client__info">
-            <img src="/asset/smiley-african-woman-with-golden-earrings.jpg" alt="Jessica A.'s Profile Picture">
-            <p>sent 45m ago by Jessica A.</p>
-            <div class="location">
-              <img src="/asset/location (1).png" alt="Location Pin">
-              <p>Airport road</p>
-            </div>
-            <div class="verified">
-              <img src="/asset/verified.png" alt="Verified Icon">
-              <p>verified</p>
+  
+      <div class="flex-1 flex flex-col justify-end items-end p-5 relative w-full rounded-lg overflow-hidden" data-aos="fade-left">
+        <div class="absolute bottom-[65%] left-4 bg-white text-[var(--dark-text)] font-medium text-sm p-6 rounded-xl shadow-xl max-w-[600px] transform transition-all hover:translate-y-[-5px]">
+          <p class="mb-4">Hey, I need someone to pick up a package from the post office and deliver it to my house. Are you available?</p>
+          <div class="flex items-center gap-4">
+            <img src="/asset/smiley-african-woman-with-golden-earrings.jpg" alt="Jessica A.'s Profile Picture" class="w-10 h-10 object-cover rounded-full">
+            <div class="text-xs text-[var(--gray-dark)]">
+              <p>Sent 45m ago by Jessica A.</p>
+              <div class="flex items-center gap-2">
+                <img src="/asset/location (1).png" alt="Location Pin" class="w-4 h-4">
+                <p>Airport Road</p>
+                <img src="/asset/verified.png" alt="Verified Icon" class="w-4 h-4">
+                <p>Verified</p>
+              </div>
             </div>
           </div>
         </div>
-        <img src="/asset/rb_114643.png" alt="About Illustration">
+  
+        <img src="/asset/rb_114643.png" alt="About Illustration" class="w-[85%] max-w-[500px] object-contain rounded-lg transform transition-transform hover:scale-105">
       </div>
     </div>
   </section>
+  
 
-  <!-- Process Section -->
-  <section class="process" id="how-it-works">
-    <div class="process__content">
-      <h1 data-aos="fade-up">How does hitmeup works?</h1>
-      <p data-aos="fade-up">Was a delightful solitude discovered collecting man day. Resolving neglected sir tolerably.</p>
-      <div class="process__steps">
-        <div class="process__step" data-aos="fade-right">
-          <img src="/asset/question_10521827.png" alt="Step 1 Icon">
-          <h2>Request</h2>
-          <p>Easily submit your errand request through our app with all the details and preferred timing.</p>
-        </div>
-        <img class="separator" src="./asset/circumflex-accent_649683.png" alt="">
-        <div class="process__step" data-aos="fade-right">
-          <img src="/asset/development_4471761.png" alt="Step 2 Icon">
-          <h2>Match with a Runner</h2>
-          <p>We'll connect you with a reliable errand runner who’s ready to help.</p>
-        </div>
-        <img class="separator" src="./asset/circumflex-accent_649683.png" alt="">
-        <div class="process__step" data-aos="fade-right">
-          <img src="/asset/track.png" alt="Step 3 Icon">
-          <h2>Track and Relax</h2>
-          <p>Track the progress of your errand in real-time and receive updates along the way. </p>
-        </div>
-        <img class="separator" src="./asset/circumflex-accent_649683.png" alt="">
-        <div class="process__step" data-aos="fade-right">
-          <img class="step" src="/asset/box-circle-check.png" alt="Step 4 Icon" width="10px">
-          <h2>Completion and Confirmation</h2>
-          <p>Track the progress of your errand in real-time and receive updates along the way.</p>
-        </div>
+<!-- Process Section -->
+<section id="how-it-works" class="process bg-var(--gray-light) py-16 text-center">
+  <div class="process__content max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-var(--dark-text) mb-6" data-aos="fade-up">How does Hitmeup work?</h1>
+      <p class="text-lg text-var(--gray-dark) mb-12" data-aos="fade-up">Getting things done with Hitmeup is easy!</p>
+
+      <div class="process__steps flex items-center justify-between gap-8">
+          <!-- Step 1 -->
+          <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
+              <img src="/asset/question_10521827.png" alt="Step 1 Icon" class="w-16 h-16 mx-auto mb-4">
+              <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Request</h2>
+              <p class="text-var(--gray-dark) text-sm">Easily submit your errand request through our app with all the details and preferred timing.</p>
+          </div>
+
+          <!-- Separator -->
+          <img class="separator w-8 h-8" src="./asset/circumflex-accent_649683.png" alt="Separator">
+
+          <!-- Step 2 -->
+          <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
+              <img src="/asset/development_4471761.png" alt="Step 2 Icon" class="w-16 h-16 mx-auto mb-4">
+              <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Match with a Runner</h2>
+              <p class="text-var(--gray-dark) text-sm">We'll connect you with a reliable errand runner who’s ready to help.</p>
+          </div>
+
+          <!-- Separator -->
+          <img class="separator w-8 h-8" src="./asset/circumflex-accent_649683.png" alt="Separator">
+
+          <!-- Step 3 -->
+          <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
+              <img src="/asset/track.png" alt="Step 3 Icon" class="w-16 h-16 mx-auto mb-4">
+              <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Track and Relax</h2>
+              <p class="text-var(--gray-dark) text-sm">Track the progress of your errand in real-time and receive updates along the way.</p>
+          </div>
+
+          <!-- Separator -->
+          <img class="separator w-8 h-8" src="./asset/circumflex-accent_649683.png" alt="Separator">
+
+          <!-- Step 4 -->
+          <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
+              <img src="/asset/box-circle-check.png" alt="Step 4 Icon" class="w-16 h-16 mx-auto mb-4">
+              <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Completion and Confirmation</h2>
+              <p class="text-var(--gray-dark) text-sm">Track the progress of your errand in real-time and receive updates along the way.</p>
+          </div>
       </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="container" data-aos="fade-up">
-      <div class="contact-form">
-          <h2>Got ideas? We've got the skills. Let's team up.</h2>
-          <p>Tell us more about yourself and what you've got in mind.</p>
-          <form id="contact-form">
-              <input type="text" name="name" placeholder="Your name" required>
-              <input type="email" name="email" placeholder="you@company.com" required>
-              <textarea name="project" placeholder="Tell us a little about the project..." required></textarea>
-              <fieldset>
-                  <legend>How can we help?</legend>
-                  <label><input type="checkbox" name="service" value="Website design"> Website design</label>
-                  <label><input type="checkbox" name="service" value="UX design"> UX design</label>
-                  <label><input type="checkbox" name="service" value="Content creation"> Content creation</label>
-                  <label><input type="checkbox" name="service" value="Strategy & consulting"> Strategy & consulting</label>
-                  <label><input type="checkbox" name="service" value="User research"> User research</label>
-              </fieldset>
-              <button type="submit">Let's get started!</button>
-          </form>
-      </div>
-      <div class="social-icons">
-        <a href="#"><i class="icon icon-facebook"></i></a>
-        <a href="#"><i class="icon icon-twitter"></i></a>
-        <a href="#"><i class="icon icon-linkedin"></i></a>
-        <a href="#"><i class="icon icon-instagram"></i></a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__content" data-aos="fade-up">
-      <ul class="social-links">
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Telegram</a></li>
-      </ul>
-      <ul class="footer__nav">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#about-us">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <ul class="footer__social">
-        <li class="flex-center">
-          <img src="/asset/facebook.svg" alt="Facebook Icon">
-        </li>
-        <li class="flex-center">
-          <img src="/asset/instagram.svg" alt="Instagram Icon">
-        </li>
-        <li class="flex-center">
-          <img src="/asset/twitter.svg" alt="Twitter Icon">
-        </li>
-      </ul>
-      <p>&copy; 2025 hitmeup. All Rights Reserved.</p>
-    </div>
-  </footer>
+  
+<!-- Contact Section -->
+<section class="contact py-20" id="contact">
+  <div class="container mx-auto px-4" data-aos="fade-up">
+    <div class="contact-form bg-[var(--primary-color)] p-8 rounded-2xl shadow-md w-full">
+      <h2 class="text-3xl font-bold text-[var(--dark-text)] mb-2">Got you interested? Fill out this form and we'll be in touch.</h2>
+      <p class="mb-8 text-[var(--gray-dark)]">Tell us more about yourself or ask us any question.</p>
+      <form id="contact-form" class="space-y-6">
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="Your name" 
+          required 
+          class="w-full p-3 border border-gray-300 rounded-md"
+        >
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="you@company.com" 
+          required 
+          class="w-full p-3 border border-gray-300 rounded-md"
+        >
+        <textarea 
+          name="project" 
+          placeholder="you must be standing in a field of corn, because you are all ears..." 
+          required 
+          class="w-full p-3 border border-gray-300 rounded-md resize-y"
+        ></textarea>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+        <fieldset class="space-y-4">
+          <legend class="font-semibold text-[var(--dark-text)]">How can we help?</legend>
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2">
+              <input type="checkbox" name="service" value="Website design" class="form-checkbox h-4 w-4 text-gray-600">
+              <span class="text-[var(--gray-dark)]">You want more information</span>
+            </label>
+            <label class="flex items-center space-x-2">
+              <input type="checkbox" name="service" value="UX design" class="form-checkbox h-4 w-4 text-gray-600">
+              <span class="text-[var(--gray-dark)]">You are interested in investing</span>
+            </label>
+            <label class="flex items-center space-x-2">
+              <input type="checkbox" name="service" value="Content creation" class="form-checkbox h-4 w-4 text-gray-600">
+              <span class="text-[var(--gray-dark)]">You need help signing up</span>
+            </label>
+            <label class="flex items-center space-x-2">
+              <input type="checkbox" name="service" value="User research" class="form-checkbox h-4 w-4 text-gray-600" id="other-checkbox">
+              <span class="text-[var(--gray-dark)]">Other</span>
+            </label>
+          </div>
+          <textarea 
+            id="other-textarea" 
+            name="other" 
+            placeholder="Please specify your request..." 
+            class="w-full p-3 border border-gray-300 rounded-md hidden resize-y" 
+          ></textarea>
+        </fieldset>
+
+        <button 
+          type="submit" 
+          class="w-full py-3 bg-black text-white rounded-md hover:bg-gray-800 focus:outline-none"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-[#636840] py-12 text-white relative overflow-hidden clip-path-polygon">
+  <div class="footer__content flex flex-col items-center text-center space-y-8 px-6" data-aos="fade-up">
+    
+    <!-- Navigation Links -->
+    <ul class="footer__nav flex flex-wrap justify-center gap-8 text-base font-medium">
+      <li><a href="#features" class="transition-colors duration-200 hover:text-gray-300">Features</a></li>
+      <li><a href="#how-it-works" class="transition-colors duration-200 hover:text-gray-300">How It Works</a></li>
+      <li><a href="#about-us" class="transition-colors duration-200 hover:text-gray-300">About</a></li>
+      <li><a href="#contact" class="transition-colors duration-200 hover:text-gray-300">Contact</a></li>
+    </ul>
+
+    <!-- Social Media Icons -->
+    <ul class="footer__social flex justify-center gap-6 mt-6">
+      <li class="flex items-center justify-center w-12 h-12 bg-gray-700 rounded-full shadow-lg transition-all duration-300 hover:bg-gray-600">
+        <a href="https://www.facebook.com/share/12DNZGwsPEt/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+          <img src="/asset/facebook.svg" alt="Facebook Icon" class="w-6 h-6">
+        </a>
+      </li>
+      <li class="flex items-center justify-center w-12 h-12 bg-gray-700 rounded-full shadow-lg transition-all duration-300 hover:bg-gray-600">
+        <a href="https://www.instagram.com/hitmeuphq/profilecard/?igsh=eDcwcm41MWl6NTdq" target="_blank" rel="noopener noreferrer">
+          <img src="/asset/instagram.svg" alt="Instagram Icon" class="w-6 h-6">
+        </a>
+      </li>
+      <li class="flex items-center justify-center w-12 h-12 bg-gray-700 rounded-full shadow-lg transition-all duration-300 hover:bg-gray-600">
+        <a href="https://x.com/hitmeuphq?s=21" target="_blank" rel="noopener noreferrer">
+          <img src="/asset/twitter.svg" alt="Twitter Icon" class="w-6 h-6">
+        </a>
+      </li>
+    </ul>
+
+    <!-- Copyright Text -->
+    <p class="text-sm mt-6 font-light">&copy; 2025 <span class="font-semibold">Hit Me Up</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   <script>
-    AOS.init({
-      duration: 1000,
-      offset: 100,
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
+
+    window.onscroll = function () {
+      const backToTopButton = document.getElementById('back-to-top');
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    }
+
+    document.getElementById('back-to-top').addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function updateCountdown() {
+      const countdownElement = document.getElementById('countdown');
+      const endDate = new Date('2025-02-14T00:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = endDate - now;
+  
+      if (distance <= 0) {
+        countdownElement.innerHTML = "Time's up!";
+        clearInterval(interval);
+        return;
+      }
+  
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  
+    const interval = setInterval(updateCountdown, 1000);
+  </script>
+  
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 </body>
+
 </html>
