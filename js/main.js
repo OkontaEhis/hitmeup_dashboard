@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = firebase.firestore();
 
 // Form Submission Handler
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
