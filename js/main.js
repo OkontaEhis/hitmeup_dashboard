@@ -27,7 +27,8 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
   const services = Array.from(
     e.target.querySelectorAll("input[name='service']:checked")
   ).map((checkbox) => checkbox.value);
-
+ const other = e.target.other.value;
+  
   try {
     // Add document to Firestore
     await addDoc(collection(db, "contactFormSubmissions"), {
@@ -35,6 +36,7 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
       email,
       project,
       services,
+      other,
       timestamp: new Date(), // Optional timestamp
     });
 
@@ -98,6 +100,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       behavior: 'smooth'
     });
   });
+});
+
+// Show/Hide "Other" textarea based on checkbox
+document.getElementById('other-checkbox').addEventListener('change', function() {
+  const otherTextarea = document.getElementById('other-textarea');
+  if (this.checked) {
+    otherTextarea.classList.remove('hidden');
+  } else {
+    otherTextarea.classList.add('hidden');
+  }
 });
 
 // Mobile menu toggle
