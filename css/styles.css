@@ -160,21 +160,4 @@ html {
   background-size: cover;
 }
 
-#back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 15px;
-  background-color: #ffbf00;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  color: white;
-  display: none;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
 
-#back-to-top:hover {
-  background-color: #d89f00;
-}
