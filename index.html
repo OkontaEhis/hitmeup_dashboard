@@ -86,12 +86,14 @@
   
   
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top">⬆</button>
-
+  <button
+  id="back-to-top"
+  class="fixed bottom-5 right-5 z-50 p-3 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 transition duration-300"
+>
+  ↑
+</button>
   <!-- Features Section -->
   <section class="grid gap-8 px-6 sm:px-12 lg:px-16 max-w-screen-xl mx-auto mt-16 md:grid-cols-2 lg:grid-cols-3" id="features">
-    <!-- Conversion Feature -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
       <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
@@ -103,8 +105,6 @@
         <p class="text-var(--gray-dark)">Connect instantly with freelancers or clients.</p>
       </div>
     </div>
-  
-    <!-- Community Feature -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
       <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
@@ -117,8 +117,6 @@
         <p class="text-var(--gray-dark)">Connect instantly with like-minded freelancers or clients.</p>
       </div>
     </div>
-  
-    <!-- Secure Payments Feature -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
       <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
@@ -131,8 +129,6 @@
         <p class="text-var(--gray-dark)">Fast and secure payment methods for all transactions.</p>
       </div>
     </div>
-  
-    <!-- Notifications Feature -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
       <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
@@ -145,8 +141,6 @@
         <p class="text-var(--gray-dark)">Stay updated with real-time alerts.</p>
       </div>
     </div>
-  
-    <!-- Security Feature -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105" data-aos="fade-up">
       <div class="flex justify-center items-center p-8" style="background-color: var(--secondary-color)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
@@ -159,9 +153,6 @@
       </div>
     </div>
   </section>
-  
-  
-  
   
   
   <section class="mt-10 relative w-full h-[85vh] flex items-center justify-center text-[var(--dark-text)] overflow-hidden bg-gradient-to-b from-white to-[var(--accent-color)]" id="about-us">
@@ -212,38 +203,31 @@
       <h1 class="text-4xl font-bold text-var(--dark-text) mb-6" data-aos="fade-up">How does Hitmeup work?</h1>
       <p class="text-lg text-var(--gray-dark) mb-12" data-aos="fade-up">Getting things done with Hitmeup is easy!</p>
 
-      <div class="process__steps flex items-center justify-between gap-8">
-          <!-- Step 1 -->
+      <div class="process__steps flex flex-wrap items-center justify-center gap-8">
           <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
               <img src="/asset/question_10521827.png" alt="Step 1 Icon" class="w-16 h-16 mx-auto mb-4">
               <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Request</h2>
               <p class="text-var(--gray-dark) text-sm">Easily submit your errand request through our app with all the details and preferred timing.</p>
           </div>
 
-          <!-- Separator -->
-          <img class="separator w-8 h-8" src="./asset/circumflex-accent_649683.png" alt="Separator">
+          <img class="separator w-8 h-8 hidden sm:block" src="./asset/circumflex-accent_649683.png" alt="Separator">
 
-          <!-- Step 2 -->
           <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
               <img src="/asset/development_4471761.png" alt="Step 2 Icon" class="w-16 h-16 mx-auto mb-4">
               <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Match with a Runner</h2>
               <p class="text-var(--gray-dark) text-sm">We'll connect you with a reliable errand runner who’s ready to help.</p>
           </div>
 
-          <!-- Separator -->
-          <img class="separator w-8 h-8" src="./asset/circumflex-accent_649683.png" alt="Separator">
+          <img class="separator w-8 h-8 hidden sm:block" src="./asset/circumflex-accent_649683.png" alt="Separator">
 
-          <!-- Step 3 -->
           <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
               <img src="/asset/track.png" alt="Step 3 Icon" class="w-16 h-16 mx-auto mb-4">
               <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Track and Relax</h2>
               <p class="text-var(--gray-dark) text-sm">Track the progress of your errand in real-time and receive updates along the way.</p>
           </div>
 
-          <!-- Separator -->
-          <img class="separator w-8 h-8" src="./asset/circumflex-accent_649683.png" alt="Separator">
+          <img class="separator w-8 h-8 hidden sm:block" src="./asset/circumflex-accent_649683.png" alt="Separator">
 
-          <!-- Step 4 -->
           <div class="process__step text-center bg-white rounded-lg shadow-md p-6 w-64" data-aos="fade-right">
               <img src="/asset/box-circle-check.png" alt="Step 4 Icon" class="w-16 h-16 mx-auto mb-4">
               <h2 class="text-xl font-semibold text-var(--dark-text) mb-2">Completion and Confirmation</h2>
@@ -361,9 +345,6 @@
 
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<!-- Add Firebase Configuration and Firestore -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 
   <script>
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
